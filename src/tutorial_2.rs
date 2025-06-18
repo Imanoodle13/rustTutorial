@@ -1,7 +1,7 @@
 fn main() {
     println!("----------     ----------     ----------     ----------     ----------");
     println!("VARIABLE AND DATATYPE ASSIGNMENT:");
-    let x      = 4; // Implicit type assignment {assigned as an i64}
+    let x = 4; // Implicit type assignment {assigned as an i64}
     let y: u32 = 5; // Explicit type assignment {assigned as an u32, 
                     // an unsigned 32-bit integer}
     println!("`let x = 4;`:");
@@ -12,8 +12,8 @@ fn main() {
     println!();
     println!("----------     ----------     ----------     ----------     ----------");
     println!("MUTABLE VS IMUTABLE:");
-    let     a = 5;
-    let mut b = 6;
+    let     _a: i32 = 5;
+    let mut b: i32 = 6;
     println!("b = {}",b);
     b = 7;
     println!("b = {},",b);
