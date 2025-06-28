@@ -6,5 +6,5 @@ edition = "2024"
 [dependencies]
 
 [[bin]]
-name = "tutorial_2"
-path = "src/tutorial_2.rs"
+name = "main"
+path = "main.rs"

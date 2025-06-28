@@ -1,0 +1,1 @@
+C:\Users\giana\Desktop\College\ Doc\COSC\ 4353\ -\ Software\ Design\rustTutorial\src\tutorial_1\target\debug\main.exe: C:\Users\giana\Desktop\College\ Doc\COSC\ 4353\ -\ Software\ Design\rustTutorial\src\tutorial_1\main.rs
