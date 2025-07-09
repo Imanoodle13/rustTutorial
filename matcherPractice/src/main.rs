@@ -1,10 +1,13 @@
 /* Skill Matching */
-
 fn event_similarity_ratio(event_skill_profile: &Vec<String>, volunteer_skill_profile: &Vec<String>) -> (f32,f32){
+    let mut sorted_esp: Vec<String> = event_skill_profile.clone();
+    let mut sorted_vsp: Vec<String> = volunteer_skill_profile.clone();
+    sorted_esp.sort();
+    sorted_vsp.sort();
+    
     let mut event_similarity_index: f32 = 0.0;
-
-    for skill in volunteer_skill_profile {
-        for event_skill in event_skill_profile {
+    for skill in &sorted_vsp {
+        for event_skill in &sorted_esp {
             if skill == event_skill {
                 event_similarity_index += 1.0;
             }
@@ -17,8 +20,8 @@ fn event_similarity_ratio(event_skill_profile: &Vec<String>, volunteer_skill_pro
 fn main(){
     // Event Skill Profiles
     let event_skill_profile1: Vec<String> = vec!["Rust".to_string(), "Python".to_string(), "JavaScript".to_string()];
-    let event_skill_profile2: Vec<String> = vec!["Java".to_string(), "C#".to_string(),     "Ruby".to_string(),  "Swift".to_string()];
-    let event_skill_profile3: Vec<String> = vec!["PHP".to_string(),  "Perl".to_string(),   "Scala".to_string(), "Python".to_string(), "Elixir".to_string()];
+    let event_skill_profile2: Vec<String> = vec!["Java".to_string(), "C#".to_string()    , "Ruby".to_string()  , "Swift".to_string()];
+    let event_skill_profile3: Vec<String> = vec!["PHP".to_string() , "Perl".to_string()  ,  "Scala".to_string(), "Python".to_string(), "Elixir".to_string()];
 
     // Input volunteer skills
     let mut volunteer_skill_profile: Vec<String> = Vec::new();
@@ -35,8 +38,10 @@ fn main(){
     let (mut count,mut ratio) = event_similarity_ratio(&event_skill_profile1,&volunteer_skill_profile);
     println!("\nEVENT SIMILARITIES:");
     println!("EVENT 1: Count = {}, Ratio = {:.2}", count,ratio);
-    (count,ratio) = event_similarity_ratio(&event_skill_profile2,&volunteer_skill_profile);
+
+    (count,ratio)                       = event_similarity_ratio(&event_skill_profile2,&volunteer_skill_profile);
     println!("EVENT 2: Count = {}, Ratio = {:.2}", count,ratio);
-    (count,ratio) = event_similarity_ratio(&event_skill_profile3,&volunteer_skill_profile);
+
+    (count,ratio)                       = event_similarity_ratio(&event_skill_profile3,&volunteer_skill_profile);
     println!("EVENT 3: Count = {}, Ratio = {:.2}", count,ratio);
 }
